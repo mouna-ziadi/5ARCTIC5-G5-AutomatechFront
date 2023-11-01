@@ -1,3 +1,5 @@
-FROM nginx:1.17.1-alpine
-COPY nginx.conf /etc/nginx/nginx.conf
-COPY /dist/summer-workshop-angular /usr/share/nginx/html
+FROM nginx:alpine
+COPY ./dist/summer-workshop-angular /usr/share/nginx/html
+EXPOSE 4200
+CMD ["nginx", "-g", "daemon off;"]
+
